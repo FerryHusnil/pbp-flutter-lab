@@ -15,6 +15,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
   String _title = "";
   int _nominal = 0;
   String? _type;
+  String _date = "";
   List<String> listType = ["Pemasukan", "Pengeluaran"];
 
   void submitForm(BuildContext ctx) {
@@ -126,6 +127,22 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
 
                       return null;
                     },
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2023),
+                      ).then((value) {
+                        setState(() {
+                          _date = value.toString();
+                        });
+                      });
+                    },
+                    child: Text(_date != "" ? _date : "Pilih tanggal"),
                   ),
                   const Spacer(),
                   TextButton(
