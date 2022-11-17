@@ -87,3 +87,58 @@ void _decrementCounter() {
     });
 }
 ```
+---
+
+# Tugas 8: Flutter Form
+
+> Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
+
+---
+
+## 1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`
+
+`Navigator.push` berguna untuk menambah route baru pada stack sementara `Navigator.pushReplacement` berfungsi mengganti route teratas pada stack pada route yang baru
+
+## 2. Widget yang Digunakan
+
+- Scaffold : Construct a skeleton to build widget(s).
+- Appbar : default widget to create navbar-like appbar
+- Center : Layout Widget to position children on the middle
+- Column : Layout widget for column display
+- Row : Layout widget for Row Display
+- Text : Text creation
+- Padding : Widget to wrap children with padding
+- Spacer : Widget to create space between children, behaves like flex
+- Container : Widget as container to contains any other widget, behaves like div on html
+- Form : Widget of form
+- ListTile : Behaves like inline widget that stores children on linear ordering (leading, traliing, etc)
+- Drawer : side-navbar like
+- Expanded : Widget that takes all the remaining space
+- MaterialPageRoute : Widget that refresh and render the entire page
+- TextFormField : input field
+- Navigator : Widget that manage set of child widget with stack
+- RoundedRectangleBorder : Creates a rounded rectangle border.
+- SizedBox : Creates a fixed size box.
+- DropdownButtonFormField : Creates a `[DropdownButton]` widget that is a `[FormField]`, wrapped in an `[InputDecorator]`.
+- DropdownMenuItem : Creates an item for a dropdown menu.
+- ElevatedButton : Create an ElevatedButton.
+- TextButton : Create a TextButton.
+
+
+## 3. Jenis-Jenis Event
+
+- onSaved: event yang terjadi ketika widget disimpan
+- onPressed: event yang terjadi ketika widget di tekan
+- onTap: event yang terjadi ketika widget di tap
+- onChanged: event yang terjadi ketika widget diubah
+
+## 4. Cara Kerja `Navigator` dalam Mengganti Halaman
+
+`Navigator` mengatur route dalam aplikasi dengan cara menggunakan stack yang menyimpan page-page dalam aplikasi.
+
+## 5. Implementasi
+
+- Membuat drawer ke dalam satu file agar drawer dapat digunakan di berbagai page di `drawer_app.dart`
+- Menyimpan data model budget pada `budget.dart`
+- Membuat page untuk menambah budget pada `add_budget_page.dart`
+- Membuat page untuk menampilkan data-data budget yang sudah ditambah dari form pada `data_budget_page.dart`
