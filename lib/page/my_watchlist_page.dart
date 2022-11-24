@@ -11,6 +11,8 @@ class MyWatchlistPage extends StatefulWidget {
 }
 
 class _MyWatchlistPageState extends State<MyWatchlistPage> {
+  final _fetchMyWatchlist = fetchMyWatchlist();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
         ),
         drawer: const DrawerApp(),
         body: FutureBuilder(
-            future: fetchMyWatchlist(),
+            future: _fetchMyWatchlist,
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.data == null) {
                 return const Center(child: CircularProgressIndicator());

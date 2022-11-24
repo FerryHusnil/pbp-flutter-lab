@@ -142,3 +142,39 @@ void _decrementCounter() {
 - Menyimpan data model budget pada `budget.dart`
 - Membuat page untuk menambah budget pada `add_budget_page.dart`
 - Membuat page untuk menampilkan data-data budget yang sudah ditambah dari form pada `data_budget_page.dart`
+
+---
+
+# Tugas 9: Integrasi Web Service pada Flutter
+
+> Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
+
+---
+
+## Pengambilan JSON Tanpa Membuat Model Terlebih Dahulu
+
+Pengambilan JSON tanpa model bisa saja yaitu outputnya berupa `Map[str, dynamic]`. Kelemahannya adalah kita tidak bisa mengetahui tipe data yang sebenarnya dari item-item yang terdapat pada `dynamic` ini.
+
+## Widget yang Digunakan
+
+- `FutureBuilder`: Widget yang dipakai untuk menampilkan data diambil oleh `Future` dari web service
+
+- `CheckboxListTile`: Widget untuk menampilkan checkbox dan label
+
+- `InkWell`: Widget yang berguna untuk menambahkan even handler `onTap`. 
+
+## Mekanisme Pengambilan Data dari JSON
+
+Fungsi `fetchMyWatchlist` dengan class `Future` berguna untuk melakukan fetch data dari JSON dari web service secara asynchronous dan mereturn `List<MyWatchlist>`. Kemudian widget `FutureBuilder` berguna untuk menampilkan data yang telah di fetch dari parameter `future`, yakni `snapshot.hasData` saat `future` berisi data, `snapshot.hasError` saat `future` terdapat error, Apabila data masih dalam proses fetch data maka `snapshot.data` akan bernilai null, sehingga tampilan akan menampilkan loading. 
+
+## Implementasi
+
+- Menambahkan navigasi baru untuk page `MyWatchlistPage` dengan menggunakan `Navigator.pushReplacement`.
+
+- Membuat model `MyWatchlist` untuk mengatur bagaimana bentuk dari response JSON.
+
+- Membuat suatu fungsi `fetchMyWatchlist` yang berfungsi untuk melakukan fetch data JSON
+
+- Membuat isi dari `MyWatchlistPage` dengan menggunakan `FutureBuilder` untuk menampilkan data hasil fetch dan menambahkan widget `InkWell` pada masing-masing data untuk menambahkan event handler `onTap` untuk menuju page `DetailWatchlistPage` yang berisi detail untuk masing-masing data `myWatchlist`
+
+- Untuk implementasi bonus, menambahkan checkbox dengan menggunakan widget `CheckboxListTile` agar user bisa merubah status apakah widget sudah ditonton atau belum dengan event handler `onChanged` yang akan merubah state dari `MyWatchlist` menggunakan `setState`. Serta menambahkan warna border yang warnya bergantung pada status `watched` yang ada pada data `MyWatchlist`.
