@@ -177,4 +177,4 @@ Fungsi `fetchMyWatchlist` dengan class `Future` berguna untuk melakukan fetch da
 
 - Membuat isi dari `MyWatchlistPage` dengan menggunakan `FutureBuilder` untuk menampilkan data hasil fetch dan menambahkan widget `InkWell` pada masing-masing data untuk menambahkan event handler `onTap` untuk menuju page `DetailWatchlistPage` yang berisi detail untuk masing-masing data `myWatchlist`
 
-- Untuk implementasi bonus, menambahkan checkbox dengan menggunakan widget `CheckboxListTile` agar user bisa merubah status apakah widget sudah ditonton atau belum dengan event handler `onChanged` yang akan merubah state dari `MyWatchlist` menggunakan `setState`. Serta menambahkan warna border yang warnya bergantung pada status `watched` yang ada pada data `MyWatchlist`.
+- Untuk implementasi bonus, menambahkan checkbox dengan menggunakan widget `CheckboxListTile` agar user bisa merubah status apakah widget sudah ditonton atau belum dengan event handler `onChanged` yang akan merubah state dari `MyWatchlist` menggunakan `setState`. Serta menambahkan warna border yang warnanya bergantung pada status `watched` yang ada pada data `MyWatchlist`.
