@@ -1,7 +1,8 @@
+import 'package:counter_7/page/my_home_page.dart';
+import 'package:counter_7/page/my_watchlist_page.dart';
 import 'package:flutter/material.dart';
-import "package:counter_7/main.dart";
-import 'package:counter_7/add_budget_page.dart';
-import "package:counter_7/data_budget_page.dart";
+import 'package:counter_7/page/add_budget_page.dart';
+import 'package:counter_7/page/data_budget_page.dart';
 
 class DrawerApp extends StatefulWidget {
   const DrawerApp({super.key});
@@ -30,7 +31,7 @@ class _DrawerAppState extends State<DrawerApp> {
           ListTile(
             title: const Text("Tambah Budget"),
             onTap: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (ctx) => const AddBudgetPage(),
@@ -41,10 +42,21 @@ class _DrawerAppState extends State<DrawerApp> {
           ListTile(
             title: const Text("Budget List"),
             onTap: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (ctx) => const DataBudgetPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text("Watch List"),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => const MyWatchlistPage(),
                 ),
               );
             },
